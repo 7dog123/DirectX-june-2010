@@ -1,0 +1,41 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+       include: [
+         { sys: mingw64, arch: x86_64, build: tools} ,
+         { sys: mingw32, arch: i686,   build: tools} # i686 tools are of limited use Uncomment if needed.
+       ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: install required dependencies 
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: ${{matrix.sys}}
+          install: wget bzip2 mingw-w64-${{ matrix.arch }}-gcc make file mpfr-devel mpc-devel zlib texinfo git
+          update: true
+
+      - name: Build windows toolchain
+        run: uname
