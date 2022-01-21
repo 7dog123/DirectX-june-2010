@@ -38,4 +38,6 @@ jobs:
           update: true
 
       - name: Build windows toolchain
-        run: ls C:\ D:\
+        run: |
+         dir C:\
+         dir D:\
