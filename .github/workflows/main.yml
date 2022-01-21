@@ -39,5 +39,5 @@ jobs:
 
       - name: Build windows toolchain
         run: |
-         dir C:\
-         dir D:\
+         dir C:\msys64
+         #dir D:\
