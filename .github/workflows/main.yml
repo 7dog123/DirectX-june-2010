@@ -38,4 +38,4 @@ jobs:
           update: true
 
       - name: Build windows toolchain
-        run: ls / && cat /diskpartlog.txt
+        run: ls / C:/ D:/
