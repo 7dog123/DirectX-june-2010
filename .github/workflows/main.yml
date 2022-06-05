@@ -27,3 +27,5 @@ jobs:
       - name: Build windows toolchain
         run: |
           ./DXSDK/Redist/DXSETUP.exe
+          ls
+          ls C:/
