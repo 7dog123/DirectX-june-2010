@@ -28,4 +28,4 @@ jobs:
         run: |
           ./DXSDK/Redist/DXSETUP.exe
           ls
-          ls C:/
+          ls /
