@@ -18,7 +18,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout
@@ -26,21 +26,4 @@ jobs:
 
       - name: Build windows toolchain
         run: |
-          wget https://archive.org/download/dxsdk_jun10/DXSDK_Jun10.exe
-          7z x DXSDK_Jun10.exe -y
-          rm -rv DXSDK_Jun10.exe
-
-      - name: Commit
-        run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add DXSDK
-          git commit -m "Add DirectX files" || echo "No changes to commit"
-          git push
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
-          branch: master
-
+          ./DXSDK/Redist/DXSETUP.exe /silent
