@@ -26,4 +26,4 @@ jobs:
 
       - name: Build windows toolchain
         run: |
-          ./DXSDK/Redist/DXSETUP.exe /silent
+          ./DXSDK/Redist/DXSETUP.exe
