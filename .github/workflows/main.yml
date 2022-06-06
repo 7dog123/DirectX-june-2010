@@ -26,6 +26,6 @@ jobs:
 
       - name: Build windows toolchain
         run: |
-          ./DXSDK/Redist/DXSETUP.exe
-          ls
-          ls /
+          mkdir "C:/Program Files/Microsoft DirectX SDK"
+          mv DirectX-june-2010/DXSDK/* "C:/Program Files/Microsoft DirectX SDK"
+          ls C:/Program Files"
