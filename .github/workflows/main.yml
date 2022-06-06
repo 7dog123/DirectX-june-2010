@@ -28,4 +28,4 @@ jobs:
         run: |
           mkdir "C:/Program Files/Microsoft DirectX SDK"
           mv DXSDK/* "C:/Program Files/Microsoft DirectX SDK"
-          ls "C:/Program Files"
+          ls "C:/Program Files/Microsoft DirectX SDK"
