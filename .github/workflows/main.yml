@@ -27,5 +27,5 @@ jobs:
       - name: Build windows toolchain
         run: |
           cd DXSDK/Redist
-          DXSETUP.exe /silent
-          ls "C:/Program Files"
+          ./DXSETUP.exe /L*v “$GITHUB_WORKSPACE/InstallLog.txt” /I
+          cat $GITHUB_WORKSPACE/InstallLog.txt
