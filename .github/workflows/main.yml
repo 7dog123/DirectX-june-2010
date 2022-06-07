@@ -45,6 +45,6 @@ jobs:
           rm -fR _DX*_ _DX*_.exe
         shell: bash
 
-       - name: search cache
-         run: $DXSDK_DIR
+      - name: search cache
+        run: $DXSDK_DIR
 
