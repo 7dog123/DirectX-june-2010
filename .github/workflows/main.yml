@@ -26,9 +26,8 @@ jobs:
 
       - name: Build windows toolchain
         run: |
-          curl -silent -L -o directx_Jun2010_redist.exe https://github.com/7dog123/DirectX-june-2010/releases/download/2010/directx_Jun2010_redist.exe
-          chmod 755 directx_Jun2010_redist.exe
-          7z x directx_Jun2010_redist.exe -y
+          curl -silent -L -o DXSDK_Jun10.exe https://archive.org/download/dxsdk_jun10/DXSDK_Jun10.exe
+          ./DXSDK_Jun10.exe
           ls 
           #cat $GITHUB_WORKSPACE/InstallLog.txt
 
