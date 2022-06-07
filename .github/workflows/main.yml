@@ -28,7 +28,7 @@ jobs:
         run: |
           curl -silent -L -o directx_Jun2010_redist.exe https://github.com/7dog123/DirectX-june-2010/releases/download/2010/directx_Jun2010_redist.exe
           chmod 755 directx_Jun2010_redist.exe
-          unzip x directx_Jun2010_redist.exe
+          7z x directx_Jun2010_redist.exe -y
           ls 
           #cat $GITHUB_WORKSPACE/InstallLog.txt
 
